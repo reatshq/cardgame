@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="battleStyle.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app" class="app" style="display: flex; flex-direction: column;">
+        <div id="cash-div" style="padding: 5px; color: #fff;"><span>00</span></div>
+        <div class="screen">
+            <!--THE DEPOT SCREEN-->
+            <div id="depot-screen">
+                <div id="cb-eqc" class="cb eqc">
+                    <div style="display: flex; justify-content: space-between; width: 98%;">
+                        <span style="font-size: 1.5rem;">Eqiupped Cards</span>
+                        <span id="eqc-count" style="font-size: 1.5rem;">180</span>
+                    </div>
+                    <div id="c-ec-v">
+                    </div>
+                </div>
+                <div class="cb owc">
+                    <div style="display: flex; justify-content: space-between; width: 98%;">
+                        <span style="font-size: 1.5rem;">Owned Cards</span>
+                        <span id="owc-count" style="font-size: 1.5rem;">180</span>
+                    </div>
+                    <div id="c-oc-v">
+                    </div>
+                </div>
+            </div>
+
+            <!--THE BATTLE SCREEN-->
+            <div id="battle-screen">
+                <div id="cb-eqc" class="cb eqc">
+                    <div style="display: flex; justify-content: space-between; width: 98%;">
+                        <span style="font-size: 1.5rem;">Eqiupped Cards</span>
+                        <span id="eqbc-count" style="font-size: 1.5rem;">180</span>
+                    </div>
+                    <div id="c-ecb-v">
+                    </div>
+                </div>
+                <div style="width: 80%; display: flex; justify-content: center;">
+                    <img src="assets/uis/battleButton.png" id="battle-button" class="battle-button">
+                </div>
+            </div>
+            
+            <!--THE BUY CARDS SCREEN-->
+            <div id="buycards-screen">
+                <div class="storeDiv">
+                    <div style="display: flex; justify-content: space-between; width: 98%;">
+                        <span style="font-size: 1.5rem;">Store Cards</span>
+                        <span id="buyc-count" style="font-size: 1.5rem;">180</span>
+                    </div>
+                    <div id="c-bc-v"></div>
+                    <div style="display: flex; justify-content: space-between; width: 98%;">
+                        <span style="font-size: 1.5rem;">Owned Cards</span>
+                        <span id="owsc-count" style="font-size: 1.5rem;">180</span>
+                    </div>
+                    <div id="c-ocs-v"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div id="nav-depot-b">Depot</div>
+            <div id="nav-battle-b">Battle</div>
+            <div id="nav-buycards-b">Buy Cards</div>
+        </div>
+        <div id="cardInfoBG" style="z-index: 4; display:none; width: 100%; height: 100%; position: absolute; background-color: rgba(0, 0, 0, 0.668);">
+            <div id="cardInfo">
+            </div>
+        </div>
+    </div>
+    <!--Battle Scene-->
+    <div id="battle-app" class="battle-app" style="display: none; flex-direction: column;">
+        <div id="game-info-div" style="padding: 5px; color: #fff;"><span>00</span></div>
+        <div class="match-screen">
+            <div id="cards-battleground">
+                <div class="dropzone e t"></div>
+                <div class="dropzone e t"></div>
+                <div class="dropzone e t"></div>
+                <div class="dropzone e t"></div>
+                <div class="dropzone disabled m"></div>
+                <div class="dropzone disabled m"></div>
+                <div class="dropzone disabled m"></div>
+                <div class="dropzone disabled m"></div>
+                <div class="dropzone b"></div>
+                <div class="dropzone b"></div>
+                <div class="dropzone b"></div>
+                <div class="dropzone b"></div>
+            </div>
+            <div id="c-ecm-v"></div>
+        </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+    <script src="playerData.js" type="module"></script>
+    <script src="depotScript.js" type="module"></script>
+    <script src="buycardsScript.js" type="module"></script>
+</body>
+</html>

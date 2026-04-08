@@ -1,0 +1,532 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    grid-template-rows: 1fr;
+    padding: 0%;
+    margin: 0%;
+    min-height: 0;
+    background-color: #111116;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+#depot-screen {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+    min-height: 0;
+}
+
+#battle-screen {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+    min-height: 0;
+}
+
+#buycards-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    padding: 1%;
+    align-items: center;
+    min-height: 0;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    height: 7%;
+    background-color: rgb(112, 112, 112);
+    gap: 5%;
+    padding: 5px 10% 5px 10%;
+    margin-top: 2%;
+}
+
+.nav-bar * {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.nav-bar *:hover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(69, 171, 255);
+    color: white;
+}
+
+.cb {
+    display: flex;
+    background-color: #2e2e2e;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0.5%;
+    width: 80%;
+    gap: 10px;
+    min-height: 0;
+    color: #fff;
+}
+
+.owc {
+    justify-content: flex-start;
+    height: 100%;
+    min-height: 0;
+}
+
+#c-ec-v {
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    overflow-x: auto;   /* scroll horizontally */
+    overflow-y: hidden; /* prevent vertical scroll */
+    width: 98%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.328);
+    align-items: center
+}
+
+#c-ec-v > * {
+    flex: 0 0 auto;     /* don’t stretch, keep natural width */
+}
+
+#c-ec-v * {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+#c-oc-v {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    overflow: auto;
+    width: 98%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.328);
+    height: 100%;
+}
+
+#c-oc-v * {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+#c-bc-v {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    overflow-y: auto;
+    width: 98%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.328);
+    height: 100%;
+    justify-content: center;
+}
+
+#c-bc-v * {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+#c-ocs-v {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    overflow-y: auto;
+    width: 98%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.328);
+    height: 100%;
+    justify-content: center;
+}
+
+#c-ocs-v * {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+#c-ecb-v {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    overflow-x: auto;   /* scroll horizontally */
+    overflow-y: hidden; /* prevent vertical scroll */
+    width: 98%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.328);
+    align-items: center;
+}
+
+#c-ecb-v > * {
+    flex: 0 0 auto;     /* don’t stretch, keep natural width */
+}
+
+#c-ecb-v * {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.storeDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #2e2e2e;
+    padding: 1%;
+    width: 80%;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+
+#c-o {
+    height: 150px;
+    aspect-ratio: 5 / 7.5;
+    background-image: linear-gradient(145deg, hsl(31, 23%, 45%), hsl(31, 23%, 23%));
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.2);
+        
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#c-o:hover {
+    transform: translateY(-5px);
+    border-color: #007bff; /* Blue accent on hover */
+    box-shadow: 
+        0 8px 15px rgba(0, 123, 255, 0.2), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.uneqpcard:hover::after {
+    display: flex;
+    position: absolute;
+    content: "[ INFO ]";
+    background-color: rgba(255, 0, 0, 0.2);
+    color: rgb(255, 52, 52);
+    font-weight: bold;
+    height: calc(100% - 3px);
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 3px);
+    z-index: 3;
+    border-radius: 4px;
+    border: 1.5px solid rgb(255, 52, 52);
+}
+
+.eqpcard:hover::after {
+    display: flex;
+    position: absolute;
+    content: "[ INFO ]";
+    background-color: rgba(130, 255, 0, 0.2);
+    color: rgb(130, 255, 52);
+    font-weight: bold;
+    height: calc(100% - 3px);
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 3px);
+    z-index: 3;
+    border-radius: 4px;
+    border: 1.5px solid rgb(130, 255, 52);
+}
+
+.buycard:hover::after {
+    display: flex;
+    position: absolute;
+    content: "[ INFO ]";
+    background-color: rgba(0, 4, 255, 0.2);
+    color: rgb(115, 117, 255);
+    font-weight: bold;
+    height: calc(100% - 3px);
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 3px);
+    z-index: 3;
+    border-radius: 4px;
+    border: 1.5px solid rgb(52, 55, 255);
+}
+
+.ownedcard:hover::after {
+    display: flex;
+    position: absolute;
+    content: "[ INFO ]";
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    height: calc(100% - 3px);
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 3px);
+    z-index: 3;
+    border-radius: 4px;
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+#c-img {
+    width:  90%;
+    border: 0px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    margin: auto;
+    aspect-ratio: 1 / 1;
+    background-position: center;
+    background-size: cover;
+    background-color: hsla(31, 100%, 80%, 0.176);
+    border-radius: 3px;
+}
+
+#c-bar-a-b {
+    background-color: #111116; 
+    flex: 1;
+    height: 0.5rem;
+    margin: 5% 2% 5% 2%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: baseline;
+    overflow: hidden;
+}
+
+#c-bar-a-b span {
+    z-index: 2;
+    font-size: 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#c-bar-a-v {
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    /* Professional Green Gradient (Health) */
+    background-image: linear-gradient(to right, #ff4d4d, #cc0000); 
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(255, 0, 0, 0.3);
+}
+
+#c-bar-h-b {
+    /* Dark Track for Bars */
+    background-color: #111116; 
+    flex: 1;
+    height: 0.5rem;
+    margin: 5% 2% 5% 2%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: baseline;
+    overflow: hidden;
+}
+
+#c-bar-h-b span {
+    z-index: 2;
+    font-size: 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#c-bar-h-v {
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    /* Professional Green Gradient (Health) */
+    background-image: linear-gradient(to right, #4cd137, #009432); 
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.buyCardUI {
+    background-color: #02020266;
+    height: fit-content;
+    gap: 1%;
+    border-radius: 3px;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#cardInfo {
+    display: flex;
+    width: 40%;
+    height: 70%;
+    background-image: linear-gradient(145deg, hsl(31, 23%, 45%), hsl(31, 23%, 23%));
+    margin: auto;
+    border-radius: 10px;
+    flex-direction: column;
+    z-index: 3;
+    padding: 1%;
+    color: white;
+}
+
+#cardInfo .iheader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.iheader button {
+    border-radius: 5px;
+    border: 2px solid #ff9696;
+    background-color: #fa2a2a;
+    color: white;
+    transition: background-color 0.5s;
+    transition: border 0.5s;
+    transition: color 0.5s;
+}
+
+.iheader button:hover {
+    border: 2px solid #5f3535;
+    background-color: #fa2a2a67;
+    color: rgb(7, 7, 7);
+}
+
+#cardInfo .iCardDet {
+    display: flex;
+    padding: 1%;
+    height: 100%;
+}
+
+.iMoreInfo {
+    background-color: #03030334;
+    flex: 1;
+    padding: 1%;
+}
+
+.ibEQUIP {
+    position: relative;
+    display: flex;
+    left: 5%;
+    right: 5%;
+    height: 10%;
+    border-radius: 5px;
+    width: calc(90% - 2px);
+    border-radius: 4px;
+    border: 1.5px solid rgb(130, 255, 52);
+    background-color: rgba(132, 255, 0, 0.586);
+    color: rgb(175, 255, 125);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ibEQUIP:hover {
+    border: 1.5px solid rgb(130, 255, 52);
+    background-color: rgba(130, 255, 0, 0.2);
+    color: rgb(130, 255, 52);
+}
+
+.ibUNEQUIP {
+    position: relative;
+    display: flex;
+    left: 5%;
+    right: 5%;
+    height: 10%;
+    border-radius: 5px;
+    width: calc(90% - 2px);
+    border-radius: 4px;
+    border: 1.5px solid rgb(255, 52, 52);
+    background-color: rgba(255, 52, 52, 0.586);
+    color: rgb(255, 116, 116);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ibUNEQUIP:hover {
+    border: 1.5px solid rgb(255, 52, 52);
+    background-color: rgba(255, 52, 52, 0.2);
+    color: rgb(255, 69, 69);
+}
+
+.ibBUY {
+    position: relative;
+    display: flex;
+    left: 5%;
+    right: 5%;
+    height: 10%;
+    border-radius: 5px;
+    width: calc(90% - 2px);
+    border-radius: 4px;
+    border: 1.5px solid rgb(52, 55, 255);
+    background-color: rgba(52, 55, 255, 0.586);
+    color: rgb(127, 129, 255);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ibBUY:hover {
+    border: 1.5px solid rgb(52, 55, 255);
+    background-color: rgba(52, 55, 255, 0.2);
+    color: rgb(52, 55, 255);
+}
+
+.battle-button {
+    min-height: 10%;
+    height: 50%;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+    transition: scale 0.5s;
+}
+
+
+.battle-button:hover {
+    opacity: 1;
+    scale: 1.1;
+}

@@ -1,0 +1,136 @@
+.battle-app {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    grid-template-rows: 1fr;
+    padding: 0%;
+    margin: 0%;
+    min-height: 0;
+    background-color: #111116;
+    align-items: center;
+}
+
+.match-screen {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cards-battleground {
+    height: 100%;
+    width: 350px;
+    display: grid;
+    background: #6868ff;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 25% 50% 25%;
+    justify-items: center;
+    align-items: center;
+}
+
+#c-ecm-v {
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    overflow-x: auto;   /* scroll horizontally */
+    overflow-y: hidden; /* prevent vertical scroll */
+    width: 98%;
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.328);
+    align-items: center
+}
+
+#c-ecm-v > * {
+    flex: 0 0 auto;     /* don’t stretch, keep natural width */
+}
+
+#c-ecm-v * {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+#c-o-m {
+    height: 150px;
+    aspect-ratio: 5 / 7.5;
+    background-image: linear-gradient(145deg, hsl(31, 23%, 45%), hsl(31, 23%, 23%));
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.2);
+        
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#c-o-m:hover {
+    transform: translateY(-5px);
+    border-color: #007bff; /* Blue accent on hover */
+    box-shadow: 
+        0 8px 15px rgba(0, 123, 255, 0.2), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#c-o-m-g {
+    width: 70%;
+    aspect-ratio: 5 / 7.5;
+    background-image: linear-gradient(145deg, hsl(31, 23%, 45%), hsl(31, 23%, 23%));
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(0, 0, 0, 0.2);
+        
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#c-o-m-g:hover {
+    transform: translateY(-5px);
+    border-color: #007bff; /* Blue accent on hover */
+    box-shadow: 
+        0 8px 15px rgba(0, 123, 255, 0.2), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#c-o-m-b {}
+
+.dropzone {
+    border: 1px dashed #000000a7;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropzone.disabled {
+    background: rgba(255,0,0,0.3); /* visually mark disabled row */
+}
+
+.dropzone.filled {
+    background: rgba(255, 214, 103, 0.3); /* visually mark disabled row */
+}
+
+.dropzone.e {
+    background: rgba(170, 0, 255, 0.082); /* visually mark disabled row */
+}
+
+
+.dropzone.t {
+    grid-row: 1;
+}
+
+.dropzone.m {
+    grid-row: 2;
+}
+
+.dropzone.b {
+    grid-row: 3;
+}
