@@ -1,6 +1,8 @@
 import { cards } from "./cardsData.js";
 import { gameElements } from "./script.js";
 
+let gameTime = 0;
+
 function createEquippedCardsView()
 {
     gameElements.cecbv.innerHTML = ``;
@@ -61,6 +63,7 @@ function Match() {
 
     cardzones.addEventListener("dragstart", e => {
         cards.forEach(card => {
+            if (!card.classList.contains("dragging")) return;
             e.dataTransfer.setData("text/plain", card.id);
         });
     });
@@ -73,11 +76,10 @@ function Match() {
 
     cardzones.addEventListener("drop", e => {
         e.preventDefault();
-        if (!cardzones.classList.contains("disabled")) {
-        const cardId = e.dataTransfer.getData("text/plain");
-        const cardEl = document.getElementById(cardId);
-        cardEl.id = 'c-o-m';
-        cardzones.appendChild(cardEl);
+        const dragging = document.querySelector(".dragging");
+        if (dragging) {
+        dragging.id = 'c-o-m';
+        cardzones.appendChild(dragging);
         zones.forEach(zone => {
             zone.childElementCount == 0 ? zone.classList.remove("filled") : zone.classList.add("filled");
         });
@@ -124,3 +126,5 @@ function Match() {
         });
     });
 }
+
+setInterval(() => { gameTime++; }, 1000);
