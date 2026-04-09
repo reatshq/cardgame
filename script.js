@@ -1,10 +1,10 @@
 import { showThedepot } from "./depotScript.js";
 import { showThebattle, createEquippedCardsViewForMatch } from "./battleScript.js";
-import { showThebuycards } from "./buyCardsScript.js";
+import { showThebuycards } from "./buycardsScript.js";
 import { cash, updateCash } from "./playerData.js";
 import { cards } from "./cardsData.js";
 import { equipCard, unequipCard } from "./depotScript.js";
-import { buyCard } from "./buyCardsScript.js";
+import { buyCard } from "./buycardsScript.js";
 
 export const gameElements = {
     app: document.getElementById('app'),
